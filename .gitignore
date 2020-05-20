@@ -1,4 +1,7 @@
 node_modules/
+public/bundle.js
+public/bundle.js.map
+public/style.css.map
 logs
 *.log
 npm-debug.log*
