@@ -26,6 +26,28 @@ database.ref().on('value', (snapshot) => {
     console.log(`${val.name} kerja di ${val.job.company} sebagai ${val.job.title}`);
 })
 
+
+database.ref('expenses').push({
+    description:'Rent',
+    amount:109500,
+    createdAt:90989089832,
+    note:''
+})
+
+database.ref('expenses').push({
+    description:'food',
+    amount:1200,
+    createdAt:90989089832,
+    note:''
+})
+
+database.ref('expenses').push({
+    description:'phone bill',
+    amount:5000,
+    createdAt:90989089832,
+    note:''
+})
+
 // database.ref().set({
 //     name: 'Aditya Pratama',
 //     age: 27,
