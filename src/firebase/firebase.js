@@ -16,25 +16,45 @@ firebase.initializeApp(config);
 
 const database = firebase.database();
 
-database.ref().set({
-    name: 'Aditya Pratama',
-    age: 27,
-    isSingle: true,
-    location: {
-        city: 'Tangerang',
-        country: 'Indonesia'
-    }
 
-}).then(() => {
-    console.log('Saved!')
-}).catch((e) => {
-    console.log('Error firebase ', e);
-});
+// on untuk subscription (cek perubahan dan tampil)
+// off untuk non subscription
+// once untuk sekali tarik aja
 
-database.ref().remove().then(() => {
-    console.log('data has been removed');
-},(e) => {
-    console.log(e)
+database.ref().on('value', (snapshot) => {
+    const val = snapshot.val();
+    console.log(`${val.name} kerja di ${val.job.company} sebagai ${val.job.title}`);
 })
+
+// database.ref().set({
+//     name: 'Aditya Pratama',
+//     age: 27,
+//     stressLevel:6,
+//     job:{
+//         title:'Software Developer',
+//         company:'Google'
+//     },
+//     location: {
+//         city: 'Tangerang',
+//         country: 'Indonesia'
+//     }
+
+// }).then(() => {
+//     console.log('Saved!')
+// }).catch((e) => {
+//     console.log('Error firebase ', e);
+// });
+
+// database.ref().update({
+//     stressLevel:9,
+//     'job/company':'Amazon',
+//     'location/city':'Jakarta'
+// });
+
+// database.ref().remove().then(() => {
+//     console.log('data has been removed');
+// },(e) => {
+//     console.log('gagal remove',e)
+// })
 
 
