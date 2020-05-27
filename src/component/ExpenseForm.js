@@ -10,7 +10,6 @@ console.log(now.format('MMM Do, YYYY'));
 export default class ExpensesForm extends React.Component {
     constructor(props){
         super(props);
-        console.log(props.expense)
         this.state = {
             description: props.expense ? props.expense.description : '',
             note: props.expense ? props.expense.note : '',

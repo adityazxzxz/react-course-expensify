@@ -13,10 +13,6 @@ import './firebase/firebase';
 
 
 const store = configureStore();
-store.dispatch(addExpense({description:'Water bill',amount:2000,createdAt:3000}));
-store.dispatch(addExpense({description:'Gas bill',amount:5000,createdAt:4000}));
-store.dispatch(addExpense({description:'Rent',amount:5000,createdAt:2000}));
-
 // store.dispatch(setTextFilter('Gas'));
 
 // setTimeout(() => {
