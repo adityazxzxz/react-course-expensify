@@ -4,7 +4,6 @@ import moment from 'moment';
 export default (expenses, { text, sortBy, startDate, endDate}) => {
     
     return expenses.filter((expense) => {
-        console.log('selector arr',expense.expense);
         const createdAtMoment = moment(expense.createdAt);
         const startDateMatch = startDate ? startDate.isSameOrBefore(createdAtMoment,'day') : true;
         const endDateMatch = endDate ? endDate.isSameOrAfter(createdAtMoment,'day') : true;
